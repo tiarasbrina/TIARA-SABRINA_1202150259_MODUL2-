@@ -19,12 +19,12 @@ import java.util.Calendar;
 
 //membuat variable untuk menampung nilai
 public class TakeAway extends AppCompatActivity {
-private EditText name, phone, address, note;
-private EditText editTextDate, editTextTime;
-int hour, minute, mYear, mMonth, mDay;
-static final int TIME_DIALOG_ID = 0;
-static final int DATE_DIALOG_ID = 1;
-private String[] arrMonth = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+private EditText name, phone, address, note; //membuat variable untuk menampung nilai dari EditText
+private EditText editTextDate, editTextTime; //dst
+int hour, minute, mYear, mMonth, mDay; //membuat variable
+static final int TIME_DIALOG_ID = 0; //dst
+static final int DATE_DIALOG_ID = 1; //
+private String[] arrMonth = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}; //array bulan
 
 
     @Override

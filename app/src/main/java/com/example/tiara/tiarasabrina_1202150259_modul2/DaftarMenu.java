@@ -17,30 +17,31 @@ public class DaftarMenu extends AppCompatActivity {
     private ArrayList<String> Price;
     private ArrayList<Integer> Gambar;
 
-    //Daftar Menu
-    private String[] menu = {"Nuri Sushi", "Omelet", "Papperoni Pizza", "Nasi Timbel", "Steak", "Ice Scream"};
-    //Daftar Harga
-    private String[] price = {"55.000", "15.000", "74.000", "30.000", "40.000", "10.000"};
-    //Daftar Gambar
+
+    private String[] menu = {"Nuri Sushi", "Omelet", "Papperoni Pizza", "Nasi Timbel", "Steak", "Ice Scream"}; //membuat array sebagai daftar menu
+    private String[] price = {"55.000", "15.000", "74.000", "30.000", "40.000", "10.000"}; //membuat array sebagai daftar harga
     private int[] image = {R.drawable.nurisushi, R.drawable.omelet, R.drawable.papperonipizza, R.drawable.nasitimbel, R.drawable.steak,
-            R.drawable.icecream};
+            R.drawable.icecream}; //membuat array sebagai daftar gambar
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_daftar_menu);
+        setContentView(R.layout.activity_daftar_menu); //mengambil konten dari layout tsb
+
         //membuat arraylist
         Menu = new ArrayList<>();
         Price = new ArrayList<>();
         Gambar = new ArrayList<>();
         recyclerView= findViewById(R.id.recyclerview);
         DaftarItem();
-        //Menggunakan Layout Manager, Dan Membuat List Secara Vertical
+
+        //membuat list yang vertical dan membuat layout manager
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
         adapter = new DaftarMenuAdapter(Menu, Price, Gambar);
-        //Memasang Adapter pada RecyclerView
+
+        //set adapter pada recyclerView
         recyclerView.setAdapter(adapter);
     }
     //membuat method untuk perulangan

@@ -13,31 +13,31 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 public class DaftarMenuAdapter extends RecyclerView.Adapter <DaftarMenuAdapter.ViewHolder> {
-    private ArrayList<String> arrayListMenu; //Membuat variable untuk Judul
-    private ArrayList<String> arrayListsPrice; //Membuat variable untuk Menu
-    private ArrayList<Integer> gambar; //Membuat variable untuk Image/Gambar
+    private ArrayList<String> arrayListMenu; //variabel untuk menampung nilai tipe String
+    private ArrayList<String> arrayListsPrice; //variable untuk menampung nilai tipe String
+    private ArrayList<Integer> gambar; //variable untuk menampung gambar
 
-    //Membuat Konstruktor pada Class RecyclerViewAdapter
-    DaftarMenuAdapter(ArrayList<String> arrayListMenu, ArrayList<String> arrayListsPrice, ArrayList<Integer> Gambar){
+    DaftarMenuAdapter(ArrayList<String> arrayListMenu, ArrayList<String> arrayListsPrice, ArrayList<Integer> Gambar){ //membuat konstruktor
         this.arrayListMenu = arrayListMenu;
         this.arrayListsPrice = arrayListsPrice;
         this.gambar = Gambar;
     }
 
-    //ViewHolder Digunakan Untuk Menyimpan Referensi Dari View-View
-    class ViewHolder extends RecyclerView.ViewHolder{
 
-        private TextView menu, price;
-        private ImageView gambar;
-        private LinearLayout ItemList;
+    class ViewHolder extends RecyclerView.ViewHolder{ //kelas untuk menampung referensi dari beberapa view
 
+        private TextView menu, price; //variable untuk menampung nilai dari bagianMenu
+        private ImageView gambar; //variable untuk menampung nilai dari bagianPrice
+        private LinearLayout ItemList; //variable untuk menampung nilai dari item_list
+
+        //method viewHolder
         ViewHolder(View itemView) {
             super(itemView);
             //Menginisialisasi View-View untuk kita gunakan pada RecyclerView
-            menu = itemView.findViewById(R.id.bagianMenu);
-            price = itemView.findViewById(R.id.bagianPrice);
-            gambar = itemView.findViewById(R.id.image);
-            ItemList = itemView.findViewById(R.id.item_list);
+            menu = itemView.findViewById(R.id.bagianMenu); //menemukan dan menyimpan nilai
+            price = itemView.findViewById(R.id.bagianPrice);//menemukan dan menyimpan nilai
+            gambar = itemView.findViewById(R.id.image);//menemukan dan menyimpan nilai
+            ItemList = itemView.findViewById(R.id.item_list);//menemukan dan menyimpan nilai
         }
     }
 
@@ -49,28 +49,29 @@ public class DaftarMenuAdapter extends RecyclerView.Adapter <DaftarMenuAdapter.V
 
 
     public void onBindViewHolder(final DaftarMenuAdapter.ViewHolder holder, final int position) {
-        //Memanggil Nilai/Value Pada View-View Yang Telah Dibuat pada Posisi Tertentu
-        final String menu = arrayListMenu.get(position);//Mengambil data sesuai dengan posisi yang telah ditentukan
-        final String price = arrayListsPrice.get(position);//Mengambil data sesuai dengan posisi yang telah ditentukan
-        final Integer image = gambar.get(position);//Mengambil data sesuai dengan posisi yang telah ditentukan
-        holder.menu.setText(menu);
-        holder.price.setText("Harga Rp. "+price);
-        holder.gambar.setImageResource(image); // Mengambil gambar sesuai posisi yang telah ditentukan
-        //Membuat Aksi Saat Judul Pada List ditekan
+
+        final String menu = arrayListMenu.get(position);//mengambil data dari array sesuai posisinya
+        final String price = arrayListsPrice.get(position);//mengambil data dari array sesuai posisinya
+        final Integer image = gambar.get(position);//mengambil data dari array sesuai posisinya
+        holder.menu.setText(menu); //set variable menu untuk ditampilkam
+        holder.price.setText("Harga Rp. "+price); //set variable price untuk ditampilkan
+        holder.gambar.setImageResource(image); // untuk ditampilkan
+
+        //membuat respon saat menu diklik
         holder.menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
             }
         });
-        //Membuat Aksi Saat List Ditekan
+        //membuat respon saat itemlist diklik
         holder.ItemList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), DetailMenu.class);
-                String komposisi;
-                switch (position){
-                    case 0:
+                Intent intent = new Intent(view.getContext(), DetailMenu.class); //membuat intent
+                String komposisi; //membuat variabel
+                switch (position){ //membuat kondisi untuk posisi
+                    case 0: //kondisi pertama
                         intent.putExtra("menu", arrayListMenu.get(position));
                         intent.putExtra("price", arrayListsPrice.get(position));
                         intent.putExtra("image", gambar.get(position));
@@ -78,7 +79,7 @@ public class DaftarMenuAdapter extends RecyclerView.Adapter <DaftarMenuAdapter.V
                         intent.putExtra("komposisi", komposisi);
                         view.getContext().startActivity(intent);
                         break;
-                    case 1:
+                    case 1://kondisi kedua
                         intent.putExtra("menu", arrayListMenu.get(position));
                         intent.putExtra("price", arrayListsPrice.get(position));
                         intent.putExtra("image", gambar.get(position));
@@ -86,7 +87,7 @@ public class DaftarMenuAdapter extends RecyclerView.Adapter <DaftarMenuAdapter.V
                         intent.putExtra("komposisi", komposisi);
                         view.getContext().startActivity(intent);
                         break;
-                    case 2:
+                    case 2: //kondisi ketiga
                         intent.putExtra("menu", arrayListMenu.get(position));
                         intent.putExtra("price", arrayListsPrice.get(position));
                         intent.putExtra("image", gambar.get(position));
@@ -94,7 +95,7 @@ public class DaftarMenuAdapter extends RecyclerView.Adapter <DaftarMenuAdapter.V
                         intent.putExtra("komposisi", komposisi);
                         view.getContext().startActivity(intent);
                         break;
-                    case 3:
+                    case 3: //kondisi keempat
                         intent.putExtra("menu", arrayListMenu.get(position));
                         intent.putExtra("price", arrayListsPrice.get(position));
                         intent.putExtra("image", gambar.get(position));
@@ -102,7 +103,7 @@ public class DaftarMenuAdapter extends RecyclerView.Adapter <DaftarMenuAdapter.V
                         intent.putExtra("komposisi", komposisi);
                         view.getContext().startActivity(intent);
                         break;
-                    case 4:
+                    case 4: //kondisi ke lima
                         intent.putExtra("menu", arrayListMenu.get(position));
                         intent.putExtra("price", arrayListsPrice.get(position));
                         intent.putExtra("image", gambar.get(position));
@@ -110,7 +111,7 @@ public class DaftarMenuAdapter extends RecyclerView.Adapter <DaftarMenuAdapter.V
                         intent.putExtra("komposisi", komposisi);
                         view.getContext().startActivity(intent);
                         break;
-                    case 5:
+                    case 5: //kondisi ke enam
                         intent.putExtra("menu", arrayListMenu.get(position));
                         intent.putExtra("price", arrayListsPrice.get(position));
                         intent.putExtra("image", gambar.get(position));
@@ -122,7 +123,6 @@ public class DaftarMenuAdapter extends RecyclerView.Adapter <DaftarMenuAdapter.V
             }
         });
     }
-
 
     public int getItemCount() {
         return arrayListMenu.size();

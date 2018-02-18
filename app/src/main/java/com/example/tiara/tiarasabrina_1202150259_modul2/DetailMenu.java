@@ -10,24 +10,25 @@ public class DetailMenu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_menu);
+        setContentView(R.layout.activity_detail_menu); //mengambil konten dari layout tsb
 
-        //mengeset button back agar muncul di view
+        //membuat button back
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        //menerima value yang dikirimkan dari activity sebelumnya berupa sebuah key value
-        String menu = getIntent().getStringExtra("menu");
-        String price = getIntent().getStringExtra("price");
-        String komposisi = getIntent().getStringExtra("komposisi");
-        Integer image = getIntent().getIntExtra("image", 0);
+        //mengambil nilai string dari aktivity sebelumnya
+        String menu = getIntent().getStringExtra("menu"); //mengambil nilai menu
+        Integer image = getIntent().getIntExtra("image", 0); //mengambil nilai gambar
+        String price = getIntent().getStringExtra("price"); //mengambil nilai harga
+        String komposisi = getIntent().getStringExtra("komposisi"); //mengambil nilai komposisi
 
-        //mendifinisikan TextView dan ImageView dengan id
+
+        //menemukan dan mengambil nilai dari textView dan ImangeView dan disimpan di variabel
         TextView txtMenu = findViewById(R.id.namaMenu);
         TextView txtPrice = findViewById(R.id.price);
         TextView txtkomposisi = findViewById(R.id.listkomposisi);
         ImageView images = findViewById(R.id.imageMenu);
 
-        //mengeset valuenya
+        //set nilai variabel txtMenu dll
         txtMenu.setText(menu);
         txtPrice.setText(price);
         txtkomposisi.setText(komposisi);

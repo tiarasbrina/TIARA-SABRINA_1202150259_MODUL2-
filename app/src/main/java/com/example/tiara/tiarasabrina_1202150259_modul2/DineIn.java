@@ -54,11 +54,11 @@ public class DineIn extends AppCompatActivity implements AdapterView.OnItemSelec
 
     }
 
+    //method untuk mengambil posisi dari array
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         noMeja = adapterView.getItemAtPosition(i).toString();
     }
-
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
         Log.d(TAG, getString(R.string.nothing_selected));
