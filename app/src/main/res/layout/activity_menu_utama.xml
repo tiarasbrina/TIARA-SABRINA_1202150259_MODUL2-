@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffefcc"
+    tools:context="com.example.tiara.tiarasabrina_1202150259_modul2.MenuUtama">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/original"
+        android:layout_marginTop="25dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="20dp"
+        android:text="Pilih Menu"
+        android:textSize="24sp" />
+
+    <RadioGroup
+        android:id="@+id/jenisMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/kataNilai"
+        android:layout_alignStart="@+id/kataNilai"
+        android:layout_below="@+id/inputNilai"
+        android:layout_marginStart="145dp"
+        android:layout_marginTop="17dp">
+
+        <RadioButton
+            android:id="@+id/radioDine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/konvert"
+            android:layout_alignStart="@+id/konvert"
+            android:layout_centerVertical="true"
+            android:text="Dine In" />
+
+        <RadioButton
+            android:id="@+id/radioTake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/jenisMenu"
+            android:layout_alignLeft="@+id/jenisMenu"
+            android:layout_alignStart="@+id/jenisMenu"
+            android:text="Take Away" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btPesanSekarang"
+        android:layout_width="159dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="117dp"
+        android:layout_marginTop="20dp"
+        android:onClick="btPesanSekarang"
+        android:text="Pesan Sekarang" />
+</LinearLayout>
